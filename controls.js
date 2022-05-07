@@ -25,6 +25,7 @@ function subtitleHandler() {
 }
 
 function audioHandler() {
+  video.pause();
   const source = document.getElementById("audioSource");
   const lang = document.getElementById("audio-select").value;
 
@@ -33,6 +34,7 @@ function audioHandler() {
   audio.load();
 
   audio.addEventListener("loadeddata", () => {
+    video.play();
     audio.play();
     audio.currentTime = video.currentTime;
   })

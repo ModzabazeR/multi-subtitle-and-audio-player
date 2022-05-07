@@ -34,3 +34,7 @@ audio {
 p {
     color: white;
 }
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
