@@ -24,13 +24,12 @@ function subtitleHandler() {
   instance.setTrackByUrl(`resources/subtitle/travail_trailer.${lang}.ass`);
 }
 
-function audioHandler() {
-  video.muted = true;
+async function audioHandler() {
   const source = document.getElementById("audioSource");
   const lang = document.getElementById("audio-select").value;
 
   source.src = `resources/audio/travail_trailer.${lang}.m4a`;
-  audio.load();
-  audio.play();
+  await audio.load();
+  await audio.play();
   audio.currentTime = video.currentTime;
 }
