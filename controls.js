@@ -25,11 +25,12 @@ function subtitleHandler() {
 }
 
 async function audioHandler() {
+  await video.pause();
   const source = document.getElementById("audioSource");
   const lang = document.getElementById("audio-select").value;
 
   source.src = `resources/audio/travail_trailer.${lang}.m4a`;
   await audio.load();
-  await audio.play();
+  await video.play();
   audio.currentTime = video.currentTime;
 }
